@@ -272,4 +272,7 @@ p.paragraph {
 	.ctas-button-2 {
 		margin: 10px 0 0 0;
 	}
+}.feature6 {
+	padding: 90px 0;
+	border-bottom: 1px solid rgba(0,0,0,.1)
 }
