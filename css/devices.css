@@ -2,7 +2,7 @@
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	border-radius: 8px;
+	border-radius: 3px;
 	box-shadow: -1px 1px 4px rgba(107,124,147,.45);
 	background: white;
 }
