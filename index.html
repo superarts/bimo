@@ -58,7 +58,15 @@ var jiathis_config={
 <!--
 var url = "https://itunes.apple.com/us/app/%E7%AC%94%E5%A2%A8-%E6%96%87%E5%AD%97%E7%9B%B4%E6%92%AD%E4%BD%A0%E7%9A%84%E4%B8%96%E7%95%8C/id1219692380?ls=1&mt=8"
 if (location.search) {
-	url = "https://itunes.apple.com/app/apple-store/id1219692380?pt=402309&ct=" + location.search.replace("?", "") + "&mt=8";
+    var parts = location.search.substring(1).split('&');
+	var params = [];
+	params.c = "default";
+    for (var i = 0; i < parts.length; i++) {
+        var nv = parts[i].split('=');
+        if (!nv[0]) continue;
+        params[nv[0]] = nv[1] || true;
+    }
+	url = "https://itunes.apple.com/app/apple-store/id1219692380?pt=402309&ct=" + params.c + "&mt=8";
 }
 document.write("<a class=\"ctas-button\" href=\"" + url + "\">");
 document.write("<img src=\"img/applelogo.svg\">");
