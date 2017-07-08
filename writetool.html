@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+
+	<head>
+
+		<!-- MISC/META -->
+		<title> ZenPen ~ Minimal Distraction, Maximum Zen </title>
+        <meta charset="utf-8">
+		<meta name="description" content="Zenpen - A minimal text editor, made to stay out of the way while you get the words down.">
+        
+		<!-- CSS -->
+		<!-- <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"> -->
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/fonts.css" rel="stylesheet">
+
+		<script src="js/libs/jquery.min.js"></script>
+
+    </head>
+
+	<body class="yin">
+
+		<div class="overlay">
+			<div class="wordcount modal">
+				<h1>Target Word Count</h1>
+				<div>
+					<input type="number" name="quantity" value="0" min="0" />
+				</div>
+			</div>
+
+			<div class="description modal">
+				<h1> About ZenPen </h1>
+				<p>  Zenpen is a clean and simple writing zone, made by <a href="http://tholman.com">Tim Holman</a> (<a href="http://twitter.com/twholman">@twholman</a>), to get you into that zone, where you can focus on the writing.
+				<br><br>ZenPen is open source on <a href="http://github.com/tholman/zenpen">Github</a>.
+				<br><br>If you have any questions, hit me up via <a href="mailto:timothy.w.holman@gmail.com">email</a>.</p>
+			</div>
+			
+			<div class="saveoverlay modal">
+				<h1>Select save format</h1>
+				<p class='saveselection'>
+					<!-- <span data-format='markdown'>Markdown</span>
+					<span data-format='html'>HTML</span> -->
+					<span data-format='plain'>下载</span>
+				</p>
+				<button class='savebutton useicons'></button>
+				<div> Or select format and press ctrl+c (cmd+c on mac) to copy the text. </div>
+				<textarea class='hiddentextbox'></textarea>
+			</div>
+		</div>
+
+		<div class="text-options">
+			<div class="options">
+				<span class="no-overflow">
+					<span class="lengthen ui-inputs">
+						<button class="url useicons">&#xe005;</button>
+						<input class="url-input" type="text" placeholder="Type or Paste URL here"/>
+						<button class="bold">b</button>
+						<button class="italic">i</button>
+						<button class="quote">&rdquo;</button>
+					</span>
+				</span>
+			</div>
+		</div>
+
+		<div class="ui">
+
+			<div class="wrapper">
+
+				<div class="top editing">
+					<button class="fullscreen useicons" title="Toggle fullscreen">
+						&#xe000;
+					</button>
+
+					<button class="color-flip useicons" title="Invert colors">
+						&#xe002;
+					</button>
+
+					<button class="target useicons" title="Set target word count" style="display: none;">
+						<!-- &#xe001; -->
+					</button>
+					<button class="save useicons" title="Save Text">
+						&#xe003;
+					</button>
+				</div>
+
+				<div class="bottom">
+					<button class="about">
+						<!-- ? -->
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- 文字字数 -->
+		<div class="countbox" style="position: absolute; right: 50px;top: 20px;">
+			<span class="count">0</span>字
+		</div>
+
+
+		<div class="word-counter">
+			<span class="progress"></span>
+		</div>
+		
+		
+		<style>
+			.tag{
+				width: 150px;
+				text-align:right;
+				/*position: absolute;*/
+				/*left: 50%;
+				margin-left: -480px;*/
+				float: left;
+				list-style: none;
+				display: none;
+			}
+			.tag_h{
+				margin-top: 10px;
+			}
+			.tag_a{
+				margin-top: 30px;
+			}
+			.tag_d{
+				margin-top: 10px;
+			}
+			.author{
+				font-size: 20px;
+				font-weight: bold;
+				margin-top: 10px;
+			}
+			.dec{
+				font-size: 20px;
+				font-weight: bold;
+				margin-top: 10px;
+			}
+			.tag .p{
+				margin-top: 35px;
+			}
+
+
+			
+			.box{
+				position: relative;
+			}
+			.tags{
+				position:absolute;
+				left: -120px;
+				width: 100px;
+				text-align: right;
+				top: .2em;
+			}			
+			.limit{
+				position: absolute;
+				right: 0;top: .2em;
+				margin-right: -100px;
+			}
+			.article-tags{
+				position:absolute;
+				left: -120px;
+				width: 100px;
+				text-align: right;
+				top: 6px;
+				list-style: none;
+				margin: 0;
+			}	
+			.article-tags li{
+				margin-bottom: 22px;
+			}		
+			.article-tags .l{position: absolute;
+				right: -720px;
+
+			}	
+		</style>
+		<!-- <div class="tag">
+			<ul class="p">
+				
+			</ul>
+		</div>
+		 -->
+
+		<section class="body">
+			<!-- 内容 -->
+			<div class="box">
+				<span class="tags">文章标题:</span>
+				<header data-max="30"  contenteditable="true" class="header">
+				</header>
+				<span class="limit"><em class="curr"></em>/<em class="max"></em>字</span>
+			</div>
+			
+
+			<div class="box">
+				<span class="tags">作者笔名:</span>
+				<div data-max="8" contenteditable="true" class="author"></div>
+				<span class="limit"><em class="curr"></em>/<em class="max"></em>字</span>
+			</div>
+
+			<div class="box">
+				<span class="tags">文章简介:</span>
+				<div  data-max="100" contenteditable="true" class="dec"></div>
+				<span class="limit"><em class="curr"></em>/<em class="max"></em>字</span>
+			</div>
+			
+
+
+			<div class="box">
+			<ul class="article-tags">
+				
+				
+			</ul>
+
+			<article contenteditable="true" class="content">
+				
+			</article>
+			</div>
+
+		</section>
+
+		<!-- LIBS -->
+		<script src="js/libs/FileSaver.min.js"></script>
+		<script src="js/libs/Blob.min.js"></script>
+		<script src="js/libs/screenfull.min.js"></script>
+		
+		<!-- JS -->
+		<script src="js/default.js"></script>
+		<script src="js/utils.js"></script>
+		<script src="js/editor.js"></script>
+		<script src="js/ui.js"></script>
+		<script type="text/javascript">
+	        // Initiate ZenPen
+	        ZenPen.editor.init();
+	    	ZenPen.ui.init();
+
+
+        </script>
+
+	</body>
+</html>
