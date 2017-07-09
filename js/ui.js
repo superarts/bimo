@@ -538,7 +538,7 @@ saveText( event )
 					//.replace(/\n{3}/g,"\n")
 					//.replace(/\n/,""); //replace the opening line break
 				
-				text = "\n字数\n" + $('.count').text()+ "\n气泡数\n" + $('.article-tags li').length+"\n"+header + author + dec + text ;
+				text = "字数\n" + $('.count').text()+"\n"+ "\n气泡数\n" + $('.article-tags li').length+"\n"+"\n文章标题\n"+header +"\n作者笔名\n"+ author +"\n文章简介\n"+ dec +"\n"+ text ;
 			break;
 			default:
 			break;
