@@ -1,3 +1,4 @@
+a842474 修正了一个网站apk文件名无法更新的问题
 9839dc0 加入了‘武侠玄幻’分类
 1717c56 网站apk加入了版本号
 ef3aed4 Fixed wrong host issue
