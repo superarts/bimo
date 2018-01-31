@@ -1,3 +1,4 @@
+eecdecb 修正了一个图片权限的问题 / Added GalleryPermissionManager
 6b4a1e9 修正了一个网站apk文件名错误的问题
 a842474 修正了一个网站apk文件名无法更新的问题
 9839dc0 加入了‘武侠玄幻’分类
