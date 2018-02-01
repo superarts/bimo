@@ -1,3 +1,5 @@
+091c52e 更改了图片缓存目录
+d2026a2 Updated upload.sh
 382e7c5 无法创建临时文件时改为上传原图
 eecdecb 修正了一个图片权限的问题 / Added GalleryPermissionManager
 6b4a1e9 修正了一个网站apk文件名错误的问题
