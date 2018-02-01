@@ -1,3 +1,4 @@
+382e7c5 无法创建临时文件时改为上传原图
 eecdecb 修正了一个图片权限的问题 / Added GalleryPermissionManager
 6b4a1e9 修正了一个网站apk文件名错误的问题
 a842474 修正了一个网站apk文件名无法更新的问题
