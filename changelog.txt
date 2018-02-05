@@ -1,171 +1,57 @@
-091c52e 更改了图片缓存目录
-d2026a2 Updated upload.sh
-382e7c5 无法创建临时文件时改为上传原图
-eecdecb 修正了一个图片权限的问题 / Added GalleryPermissionManager
-6b4a1e9 修正了一个网站apk文件名错误的问题
-a842474 修正了一个网站apk文件名无法更新的问题
-9839dc0 加入了‘武侠玄幻’分类
-1717c56 网站apk加入了版本号
-ef3aed4 Fixed wrong host issue
-48fcd32 Added hockeyapp crash report
-dd4acc1 Fixed a crashing issue when server is down
-a2f1879 Added socket handling
-2d4bb95 Resized cover image before uploading
-20f680b Added avatar_id update during registration
-5396e1c Added image resizing for avatar upload
-4219f38 Added a simple script to release APK files to bimo.live
-176aae5 Fixed username login
-b6b5511 Replaced Register with UsernameRegister
-b4c858a Refactoring: PreferenceManager
-3864779 Refactoring: Bimo and PreferenceManager
-16e9783 Implemented logout
-f3f747a Fixed an issue that prevents login info to be saved
-8f18ce7 Added preference
-4a7e939 Disabled default login for non-debug builds
-334aa62 Revised register flow
-0b3de55 Added SMSSDK verification
-d6b09ea Fixed an issue that shows 'all read' too early
-6210701 Removed paginate and swipecard libs
-76250d5 Refactoring: removed more dead code
-3d43134 Refactoring: ArticleDetail.CasterAdapter
-cf7e537 Refactor ReaderViewHolder; added a temporary solution when bubbles reach the end
-17cec01 Added simple text based actor display
-b7278df Refactor: replaced ArticleDetail.Adapter/Activity with ReaderAdapter and ReaderActivity based on the new paging library
-8de723a Merge branch 'master' of ssh://bitbucket.org/superarts/bimo-android
-b203e21 Ignored /release
-b594932 Added a dummy PostDataSource
-675c0ec Refactor: renamed App.ThreadList and App.ThreadDetail; moved Database to Disabled
-a23361e Added ThreadList.ListViewModel
-0bf93b1 Replaced paginate with paging
-8f96686 Implemented ThreadList pagination using new paging library
-0c1fbaf Added db schema
-be2ac38 Removed dead code in ThreadList; organized structure
-fba08eb Fixed an issue that causes 500
-e47f005 Added ArticleDataSource in ArticleDataSourceFactory
-922ebd4 Updated gitignore
-0a1e077 Added ArticleDataSourceFactory
-d7e5fa5 Removed current adapter
-4d8064d Added a shared Bimo object for database etc
-4942f61 Refactor: renamed ThreadDao to ArticleDao
-03882fe Added ArticleDataSource.loadInitial
-15ac00b Added ThreadDataSource
-fab03d9 Updated Thread entity
-7ef0884 Refactor: renamed Thread with Article to avoid java.lang.Thread to be chosed automatically
-897b8d9 Replaced ThreadEntity with Thread properly
-10a7f4a Added a dummy ThreadEntity
-fb2f85d Added schemas
-cbabd99 Removed some Room related annotations
-5629f15 Added ThreadDao
-7e9d610 Updated paging
-d50cdf3 Removed additional build settings
-b4bafe1 Updated to Android Studio 3.0.1
-55f1ed2 A new post cannot be created while an old one is being posted
-51e2fd8 Added can_create permission check for casting
-c712f79 Replaced category edit with spinner
-5b1d67a Removed autocomplete in login and register
-5624957 Removed retry for cast
-eaa6d9f Updated name and icon
-7a2db5d Added proper staging and release targets
-0ba57f7 Revised login/register flow
-3309523 Updated login UI
-0b158bf Added SMS verification code sending
-4b8e667 Updated build SDK to 26.0.1
-c22c05c Updated to android.arch rc1
-6713daa Merge branch 'master' of ssh://bitbucket.org/superarts/bimo-android
-395e5b1 Updated register UI
-8840b30 Added country list spinner
-8379f69 Added SMS country list enumerating
-cb1dd98 Added test code for SMSSDK UI (not working)
-33b440f Added SMSSDK credentails
-288ea02 Added UI reload after thread list is loaded
-c540c67 Updated thread composer UI
-f6bf7fd Merge branch 'master' of bitbucket.org:superarts/bimo-android
-4786f44 Updating layout of thread edit activity
-1a01eea Added build guide
-2e6d4ec Switched to dev
-25f3a32 Added category support
-d24b3e0 Implemented cast ending
-6339d02 Added SMSSDK
-39d0958 Added end casting button
-2bf4149 Replaced all list with ended and casting tabs
-640d431 Added status
-360f534 Refactor: Removed sectionNumber from constructor of ListFragment.newInstance
-ab9bd47 Created placeholder for casting threads
-5cb6161 Fixed an issue that prevents scrolling after new post is created
-48d189b Fixed issues that prevents button states to be updated
-114557c Updated UI for post editor
-3f34e71 Updated UI logic for thread editor
-939dd3b Refactor: disabled EditPostActivity; use ThreadDetail.EditorActivity
-0b91175 Refactoring: renamed Webservice to WebService
-7d932ac Removed floating action botton
-edfe823 Fixed multiple issues that prevent images to be displayed and uploaded
-fc988f8 Added image uploading in register view
-7f259a2 Implemented image uploading
-4a4d497 Added item display in post composer
-ab5625e Fixed a crashing issue caused by missing cover object
-d743fce Added post observing for castRepo
-2a12263 Implemented livecast thread and post creation
-2b41e97 Updated CastListener
-52ed43d Implemented edit post UI
-b8c4aa6 Replaced EditPostActivity with ThreadDetail.EditorActivity
-1ccadb7 Added a test for socket
-ac7ce54 Implemented socket based createThread and createPost
-588aeae Added createThread in CastRepository
-f22dd1b Added livecast and authorization
-a97e551 Added casting entry button
-ce4b5a2 Added support for author and cover
-1f534b9 Added author name and fake image
-62266f7 Improved reader UI
-b688dc0 Implemented read next
-cbd32dd Implemented new UI for post text
-6565165 Fixed an async problem in post list
-fe17e4b Implemented posts loading
-c2ee3c0 Refactor: renaming
-f2a48de Refactor: Recycler
-b22eacf Refactor: renaming ThreadList
-b3d665f Refactor: ThreadList fragment
-205711d Refactor: ThreadList and Shard
-84bb346 Refactor: changed PlaceholderFragment to CardFragment
-a970090 Implemented new UI for thread list
-003ac68 Implemented threadlist pagination
-f1b1d20 Refactor: name changing
-3ce5a22 Refactor: moved pagination callbacks to viewModel
-8610092 Replaced plain thread list with Paginate list
-3dfc396 replaced thread deck with list
-9cfd287 Publishing a new post also update post list now
-90c3935 Added posts list in post edit
-495d318 Read next scroll directly to bottom now
-cd3b24e Implemented appending post
-cadf75f Added edit post activity
-4369c2d Implemented adding thread
-0ba1730 Added createThread API support
-32ade67 Added thread editor activity
-ee8b1ee Refactor: hide private properties properly
-4b585e6 Fixed an issue that prevent the first page of posts to be loaded
-070eb41 Replaced text with list in thread view
-05823e8 Implemented posts pagination
-2b80d15 Refactoring: support posts
-d5bf0f5 Switched to ali
-93d041b implemented pagination in thread list
-168916a cleanup
-756f889 Refactor: packages
-eeeeb34 Utilized AppCompatLifecycleActivity
-558e4ab Updated android libraries to alpha5 from alpha3
-19e0f21 Added posts
-83777b9 Refactor: renaming
-0acb7ab Refactor: renaming
-9e27054 Added thread activity
-ddd3e9e Added thread detail placeholder
-d72b117 Implemented card reloading
-708ac15 Added title display
-f479965 Fixed an issue that prevents ThreadList to be updated
-c750222 Added test drawables
-a22aaeb Added swipedeck
-4b9aa9a Updated readme
-63de23d updated version name
-4cd437a updated build script to automate version number
-c3aa511 Added README
-fbfb55e Implemented register
-5c14971 Implemented login
-78aa611 Removed kotlin
-bd3a99f initial commit
+01a12fa Fixed a version number issue manually
+5083871 Added apk 1.0.176.dd58a1c0
+37cbcb8 Added apk 1.0.172.d97b5ac5
+05dfb1e Added apk 1.0.171.091c52ec
+d406c61 Added apk 1.0.169.382e7c51
+fb84d31 Added apk 1.0.168.eecdecbf
+e56c835 Added apk 1.0.167.6b4a1e90
+b517ae1 Added apk 1.0.166.a842474d
+dd9e127 Added apk 1.0.165.9839dc0b
+2544064 Added apk 1.0.163.ef3aed41
+c8c820d Added apk 1.0.163.ef3aed41
+021850b Added apk 1.0.163.ef3aed41
+5e72d56 Added apk 1.0.162.48fcd32a
+49db6e1 Added apk 1.0.159.2d4bb95e
+4da6ab5 Added apk 1.0.157.5396e1c4
+c0ca591 Added apk 1.0.155.176aae5c
+387688d Added space between ios and android buttons
+04e51ce Added apk 1.0.154
+2291c35 update
+60af970 update ui.js and writetool.html
+eb5ce7e update ui.js
+767e6b8 update anchor.html
+8db97e3 update writetool.html
+c8b0530 add writetool.html
+f2d5421 update anchor page
+da563de update screenshots
+5a7903f update anchor page
+1d87e38 added c= for campaign
+f6207ca removed question mark from campaign id
+e092fc7 added campaign support
+d605c44 update doubt link
+4cc320c add social share
+2310e93 add SEO keywords
+d816306 update all
+b9f188e add tracking
+377fedd update screenshots
+8c84e29 update anchor
+a76f604 create anchor page
+d811027 update privact
+364d2fb update privacy
+01a6621 update
+0c61c2f update favicon on privacy
+a8250c1 add favicon
+55c0a57 update privacy
+51eca1f update index
+fc78bc4 update index and css
+8e7d537 added target
+094d5cf added privacy
+a578143 updated index
+4299aa6 added bimo site
+e508d30 Merge branch 'master' of github.com:superarts/bimo
+77b36e4 added index
+9e571ae Create CNAME
+4d01002 Set theme jekyll-theme-cayman
+fa562b9 Set theme jekyll-theme-cayman
+5d898ad updated readme
+2f1c3c2 first commit
